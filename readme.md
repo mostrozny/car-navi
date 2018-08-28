@@ -5,4 +5,5 @@
 2. `cd car-navi`
 3. `npm i`
 
-
+### Demo:
+ [Click here!](https://mostrozny.github.io/car-navi/ "Car Navigation")
