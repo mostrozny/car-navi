@@ -30,7 +30,13 @@ html, body {
   position: relative;
   top: 37px;
   width: 56%;
-  height: 62%;
+  height: 62vh;
   color: white;
   background-color: black;
+}
+
+.naviBar {
+  font-size: 20px;
+  padding: 5px;
+  float: right;
 }
