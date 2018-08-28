@@ -43,7 +43,7 @@ class InfoBar extends React.Component {
             <div className="naviBar">
                 <span><i className="fas fa-signal"></i>
                 <i className="fab fa-bluetooth-b"></i></span>
-                {this.state.hour}:{this.state.minutes}
+                <div>{this.state.hour}:{this.state.minutes}</div>
             </div>
         );
     }
