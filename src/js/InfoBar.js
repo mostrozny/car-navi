@@ -12,9 +12,19 @@ class InfoBar extends React.Component {
 
     getTime = () => {
         const date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        if(hours < 10)
+        {
+            hours = '0' + hours.toString();
+        }
+        if(minutes < 10)
+        {
+            minutes = '0' + minutes.toString();
+        }
         this.setState ({
-            hour: date.getHours(),
-            minutes: date.getMinutes()
+            hour: hours,
+            minutes: minutes
         })
     }
 
@@ -31,6 +41,8 @@ class InfoBar extends React.Component {
     render() {
         return (
             <div className="naviBar">
+                <span><i className="fas fa-signal"></i>
+                <i className="fab fa-bluetooth-b"></i></span>
                 {this.state.hour}:{this.state.minutes}
             </div>
         );
