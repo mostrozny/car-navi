@@ -1,10 +1,39 @@
 import React from 'react'
 
 class SeatControl extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            leftVent: [],
+            rightVent: []
+        }
+    }
+
 
     //omg :o why
-    
+    changeColor (btn) {
+        return btn.target.classList.toggle("activeVent");
+    }
 
+    handleVentHeadLeft = (e) => {
+        this.changeColor(e);
+    };
+    handleVentHandLeft = (e) => {
+        this.changeColor(e);
+    };
+    handleVentLegsLeft = (e) => {
+        this.changeColor(e);
+    };
+    handleVentHeadRight = (e) => {
+        this.changeColor(e);
+    };
+    handleVentHandRight = (e) => {
+        this.changeColor(e);
+    };
+    handleVentLegsRight = (e) => {
+        this.changeColor(e);
+    };
 
 
 
