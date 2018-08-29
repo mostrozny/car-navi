@@ -1,5 +1,6 @@
 import React from 'react'
 import SeatControl from "./SeatControl";
+import ClimaControl from "./ClimaControl";
 
 class Clima extends React.Component {
     constructor(props) {
@@ -38,8 +39,6 @@ class Clima extends React.Component {
     componentDidMount () {
         this.getCurrentLocationLong;
         this.getCurrentLocationLati;
-        console.log(this.state.longitude);
-        console.log(this.state.latitude);
 
         fetch(`https://api.openweathermap.org/data/2.5/weather?&units=metric&lat=${this.state.latitude}&lon=${this.state.longitude}&APPID=300d2701497f5d9e6daf2babded17864`)
             .then(resp => resp.json())
@@ -47,15 +46,13 @@ class Clima extends React.Component {
                 let currentWeather = this.state.currentWeather;
                 this.setState({
                     currentWeather: [...currentWeather, json.main.temp, json.weather[0].description, json.weather[0].id]
-                })
-              console.log(json.weather[0])
+                });
             });
     }
 
 
-    changeIcon () {
+    changeIcon = () => {
         const currIcon = this.state.currentWeather[2];
-        console.log(currIcon);
         if (currIcon >= 200 && currIcon < 300) {
             return <i className="fas fa-bolt"></i>
         } else if (currIcon >= 300 && currIcon < 500) {
@@ -69,16 +66,19 @@ class Clima extends React.Component {
         }
     }
 
-    handleChangeLeft = (e) => {
+    handleTempA = (tempA) => {
+        const temperature = tempA;
         this.setState({
-            leftTemp: e.target.value,
+            leftTemp: temperature,
         })
-    }
-    handleChangeRight = (e) => {
-        this.setState({
-            rightTemp: e.target.value,
+    };
+
+    handleTempB = (tempB) => {
+        const temperature = tempB;
+          this.setState({
+            rightTemp: temperature,
         })
-    }
+    };
 
     render() {
         return (
@@ -90,10 +90,7 @@ class Clima extends React.Component {
 
                 <SeatControl/>
 
-                <div className="climaControl">
-                <input className="slider leftSlider" onChange={this.handleChangeLeft} type="range" defaultValue={20} min="16" max="31" />
-                <input className="slider rightSlider" onChange={this.handleChangeRight} type="range" defaultValue={20} min="16" max="31" />
-                </div>
+                <ClimaControl onChangeTempA={this.handleTempA} onChangeTempB={this.handleTempB}  />
             </div>
         );
     }
