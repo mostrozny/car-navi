@@ -19,11 +19,11 @@ html, body {
   position: relative;
   width: 100vw;
   height: 100vh;
-/*  background-color: grey;
+  background-color: grey;
  background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: 40%;*/
+  background-position-y: 40%;
 }
 
 .naviInterface {
@@ -58,6 +58,10 @@ html, body {
 .naviApp {
   height: 320px;
   width: 100%;
+  display: flex;
+  align-items: center;
+ // justify-content: space-between;
+  flex-direction: column;
 }
 
 .naviMenu {
@@ -87,3 +91,120 @@ html, body {
   }
 }
 
+.currentWeather {
+  font-size: 30px;
+}
+
+.climaControl {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.slider {
+  width: 200px;
+  top: 100px;
+  transform: rotate(-90deg);
+  &:after {
+    content: "COLD";
+    color: royalblue;
+    font-weight: 700;
+    font-size: 17px;
+    position: absolute;
+    top: 84px;
+    left: -37px;
+    transform: rotate(90deg);
+  }
+  &:before {
+    content: "HOT";
+    color: crimson;
+    font-weight: 700;
+    font-size: 17px;
+    position: absolute;
+    bottom: 82px;
+    right: -30px;
+    transform: rotate(90deg);
+  }
+}
+.leftSlider {
+  position: absolute;
+  bottom: 100px;
+  left: -50px;
+}
+.rightSlider {
+  position: absolute;
+  bottom: 100px;
+  right: -50px;
+}
+
+.temperatureControl {
+  position: relative;
+  font-size: 26px;
+  .tempLeft {
+    position: absolute;
+    left: -245px;
+    top: 115px;
+  }
+  .tempRight {
+    position: absolute;
+    right: -245px;
+    top: 115px;
+  }
+}
+
+.seatControl {
+  font-size: 40px;
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  .leftSeatControl {
+    position: relative;
+    background-image: url("../images/seats.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 180px;
+    .climaHead {
+      position: absolute;
+      left: 75px;
+    }
+    .climaHand {
+      position: absolute;
+      left: 100px;
+      top: 40px;
+      transform: rotate(-10deg);
+    }
+    .climaLegs {
+      position: absolute;
+      left: 120px;
+      top: 75px;
+      transform: rotate(-20deg);
+    }
+  }
+  .rightSeatControl {
+    position: relative;
+    background-image: url("../images/seats.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 180px;
+    transform: rotateY(180deg);
+    .climaHead {
+      position: absolute;
+      left: 75px;
+    }
+    .climaHand {
+      position: absolute;
+      left: 100px;
+      top: 40px;
+      transform: rotate(-10deg);
+    }
+    .climaLegs {
+      position: absolute;
+      left: 120px;
+      top: 75px;
+      transform: rotate(-20deg);
+    }
+  }
+}
