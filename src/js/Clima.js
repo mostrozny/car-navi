@@ -1,4 +1,5 @@
 import React from 'react'
+import SeatControl from "./SeatControl";
 
 class Clima extends React.Component {
     constructor(props) {
@@ -87,18 +88,7 @@ class Clima extends React.Component {
                 <div className="temperatureControl"><span className="tempLeft">{this.state.leftTemp}&deg;C</span><span className="tempRight">{this.state.rightTemp}&deg;C</span>
                 </div>
 
-                <div className="seatControl">
-                    <div className="leftSeatControl">
-                        <i className="climaHead fas fa-angle-double-left"></i>
-                        <i className="climaHand fas fa-angle-double-left"></i>
-                        <i className="climaLegs fas fa-angle-double-left"></i>
-                    </div>
-                    <div className="rightSeatControl">
-                        <i className="climaHead fas fa-angle-double-left"></i>
-                        <i className="climaHand fas fa-angle-double-left"></i>
-                        <i className="climaLegs fas fa-angle-double-left"></i>
-                    </div>
-                </div>
+                <SeatControl/>
 
                 <div className="climaControl">
                 <input className="slider leftSlider" onChange={this.handleChangeLeft} type="range" defaultValue={20} min="16" max="31" />
