@@ -5,8 +5,8 @@ import ReactMapGL from 'react-map-gl';
 class Maps extends Component {
     state = {
         viewport: {
-            width: 650,
-            height: 320,
+            width: 800,
+            height: 350,
             latitude: 51.1078852,
             longitude: 17.0385376,
             zoom: 13
@@ -16,8 +16,8 @@ class Maps extends Component {
     changePosition = (lati, long) => {
         this.setState({
             viewport: {
-                width: 650,
-                height: 320,
+                width: 800,
+                height: 350,
                 latitude: lati,
                 longitude: long,
                 zoom: 14

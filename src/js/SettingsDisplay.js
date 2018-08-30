@@ -22,7 +22,7 @@ class SettingsDisplay extends React.Component {
                         <br />
                         <select onChange={this.handleChangeBackground} defaultValue={"black"} name="background">
                             <option value="black">Black</option>
-                            <option value="blue">Blue</option>
+                            <option value="midnightblue">Blue</option>
                             <option value="brown">Brown</option>
                             <option value="animated">Animated</option>
                         </select>

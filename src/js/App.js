@@ -4,7 +4,7 @@ import NaviInterface from './NaviInterface.js'
 class App extends React.Component {
     render() {
         return (
-            <div className="flexGlobal">
+            <div className="flexGlobal" >
                 <NaviInterface>
 
                 </NaviInterface>
@@ -12,5 +12,6 @@ class App extends React.Component {
         );
     }
 }
+
 
 export default App

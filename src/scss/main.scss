@@ -8,30 +8,27 @@ body {
 html, body {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .flexGlobal {
-  perspective: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  perspective: 1470px;
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: grey;
- background-image: url("../images/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  top: -100px;
+  width: 1470px;
+  height: 800px;
+ background: url("../images/background.jpg") no-repeat;
+ background-size: cover;
   background-position-y: 40%;
 }
 
 .naviInterface {
   transform: rotateX(2deg);
-  position: relative;
-  top: 30px;
-  width: 650px;
-  height: 390px;
+  position: absolute;
+  top: 207px;
+  left: 335px;
+  width: 800px;
+  height: 430px;
   color: white;
   background-color: black;
  // padding: 5px;
@@ -56,7 +53,7 @@ html, body {
 }
 
 .naviApp {
-  height: 320px;
+  height: 350px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -141,12 +138,12 @@ html, body {
   font-size: 26px;
   .tempLeft {
     position: absolute;
-    left: -245px;
+    left: -290px;
     top: 115px;
   }
   .tempRight {
     position: absolute;
-    right: -245px;
+    right: -290px;
     top: 115px;
   }
 }
@@ -168,17 +165,17 @@ html, body {
     height: 180px;
     .climaHead {
       position: absolute;
-      left: 75px;
+      left: 85px;
     }
     .climaHand {
       position: absolute;
-      left: 100px;
+      left: 110px;
       top: 40px;
       transform: rotate(-10deg);
     }
     .climaLegs {
       position: absolute;
-      left: 120px;
+      left: 135px;
       top: 75px;
       transform: rotate(-20deg);
     }
@@ -193,17 +190,17 @@ html, body {
     transform: rotateY(180deg);
     .climaHead {
       position: absolute;
-      left: 75px;
+      left: 85px;
     }
     .climaHand {
       position: absolute;
-      left: 100px;
+      left: 110px;
       top: 40px;
       transform: rotate(-10deg);
     }
     .climaLegs {
       position: absolute;
-      left: 120px;
+      left: 135px;
       top: 75px;
       transform: rotate(-20deg);
     }

@@ -5,7 +5,7 @@ class PlayerEngine extends React.Component {
 
     render() {
         return (
-            <div className="player">
+            <div className="players">
                         <Sound
                             url={this.props.currentTrack}
                             playStatus={this.props.statusPlay}

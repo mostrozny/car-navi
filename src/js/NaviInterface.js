@@ -62,7 +62,9 @@ class NaviInterface extends React.Component {
 
     render() {
         return (
-            <div className="naviInterface" style={{backgroundColor: this.state.background}} >
+            <div className="naviInterface" style={{
+                backgroundColor: this.state.background
+            }} >
                 <InfoBar/>
                 <HashRouter>
                     <div>
@@ -92,5 +94,4 @@ class NaviInterface extends React.Component {
         );
     }
 }
-
 export default NaviInterface
