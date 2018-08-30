@@ -256,6 +256,25 @@ html, body {
   }
 }
 
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  .settingsSound {
+    background-image: url("../images/sounda.png");
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+  }
+  .settingsDisplay {
+    background-image: url("../images/display.png");
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+  }
+}
 
 .activeVent {
   color: white;

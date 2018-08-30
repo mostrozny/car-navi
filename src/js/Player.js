@@ -17,9 +17,9 @@ class Player extends React.Component {
         this.state = {
             thumbs: [flirtini, thumbGreta, biggie],
             infoTrack: ["Flirtini - Hearthbreaks & Promises IV", "Greta Van Fleet - From The Fires", "Notorious B.I.G - Ready to die"],
-            playing: "PLAYING",
+            playing: "PAUSED",
             track: ['../src/music/fs.mp3', '../src/music/gvfht.mp3', '../src/music/brtd.mp3'],
-            playerText: "Now playing...",
+            playerText: "PAUSED",
         }
     }
 
