@@ -15,6 +15,36 @@ import {
 } from "react-router-dom";
 
 class NaviInterface extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            volume: 0.5,
+            brightness: 1,
+            background: "black",
+        }
+    }
+
+    handleVolume = (props) => {
+        const vols = props;
+        this.setState({
+            volume: vols,
+        })
+    }
+    handleBrightness = (props) => {
+        const bright = props;
+        this.setState({
+            brightness: bright,
+        })
+    }
+    handleBackground = (props) => {
+        const back = props;
+        this.setState({
+            background: back,
+        })
+    }
+
+
     render() {
         return (
             <div className="naviInterface">
@@ -26,8 +56,13 @@ class NaviInterface extends React.Component {
                             <Route path="/Maps" component={Maps} />
                             <Route path="/Clima" component={Clima} />
                             <Route path="/Settings" component={Settings} />
-                            <Route path="/SettingsSound" component={SettingsSound} />
-                            <Route path="/SettingsDisplay" component={SettingsDisplay} />
+                            <Route path="/SettingsSound" render={ props =>
+                                <SettingsSound {...props} onChangeVolume={this.handleVolume} />}
+                            />
+                            <Route path="/SettingsDisplay" render={ props =>
+                                <SettingsDisplay {...props} onChangeBackground={this.handleBackground}
+                                                 onChangeBrightness={this.handleBrightness} />
+                            } />
                             <Route component={Radio} />
                         </Switch>
                     </div>

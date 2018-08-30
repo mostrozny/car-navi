@@ -11,7 +11,7 @@ class Settings extends React.Component {
                 <HashRouter>
                 <div className="settings">
                     <NavLink to="/SettingsSound" ><div className="settingsSound" /></NavLink>
-                    <NavLink to="/SettingsDisplay" ><div className="settingsDisplay" /></NavLink>
+                    <NavLink to="/SettingsDisplay" onChange={this.handleChangeVolume} ><div className="settingsDisplay" /></NavLink>
                 </div>
                 </HashRouter>
             </div>
