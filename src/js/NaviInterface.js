@@ -7,6 +7,7 @@ import Clima from './Clima.js'
 import Settings from './Settings.js'
 import SettingsDisplay from './SettingsDisplay.js'
 import SettingsSound from './SettingsSound.js'
+import PlayerEngine from "./PlayerEngine"
 import {
     HashRouter,
     Switch,
@@ -14,14 +15,17 @@ import {
     NavLink
 } from "react-router-dom";
 
+
 class NaviInterface extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            volume: 0.5,
+            volume: 50,
             brightness: 1,
             background: "black",
+            play: "PAUSED",
+            track: "../src/music/gvfht.mp3",
         }
     }
 
@@ -44,17 +48,32 @@ class NaviInterface extends React.Component {
         })
     }
 
+    handleTrack = (props) => {
+        this.setState({
+            track: props
+        })
+    }
+    handlePlay = (props) => {
+        this.setState({
+            play: props,
+        })
+    }
+
 
     render() {
         return (
-            <div className="naviInterface">
+            <div className="naviInterface" style={{backgroundColor: this.state.background}} >
                 <InfoBar/>
                 <HashRouter>
                     <div>
                         <Switch>
-                            <Route exact path="/Radio" component={Radio} />
+                            <Route exact path="/Radio" render={ props =>
+                                <Radio {...props} onChangeTrack={this.handleTrack} onChangePlay={this.handlePlay} />}
+                            />
                             <Route path="/Maps" component={Maps} />
-                            <Route path="/Clima" component={Clima} />
+                            <Route path="/Clima" render={ props =>
+                                <Clima {...props} onChangeLeftTemp={this.handleVolume} />}
+                            />
                             <Route path="/Settings" component={Settings} />
                             <Route path="/SettingsSound" render={ props =>
                                 <SettingsSound {...props} onChangeVolume={this.handleVolume} />}
@@ -68,6 +87,7 @@ class NaviInterface extends React.Component {
                     </div>
                 </HashRouter>
                 <Menu />
+                <PlayerEngine statusVolume={this.state.volume} statusPlay={this.state.play} currentTrack={this.state.track} />
             </div>
         );
     }

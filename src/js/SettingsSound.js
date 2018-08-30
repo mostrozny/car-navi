@@ -14,7 +14,6 @@ class SettingsSound extends React.Component {
             this.props.onChangeVolume(e.target.value);
     };
 
-
     render() {
         return (
             <div className="naviApp">
@@ -22,7 +21,7 @@ class SettingsSound extends React.Component {
                     <span>
                     Radio default volume:
                     <br />
-                    <input type="range" onChange={this.handleChange} defaultValue={0.5} min="0.0" step="0.1" max="1.0" />
+                    <input type="range" onChange={this.handleChange} defaultValue={50} min={0} step={10} max={100} />
                     </span>
 
                 <HashRouter>

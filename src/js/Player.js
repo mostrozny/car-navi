@@ -49,6 +49,7 @@ class Player extends React.Component {
             infoTrack: infoArray,
             track: tracks,
         })
+        this.handleTrack()
     };
 
     handleNextTrack = () => {
@@ -75,6 +76,7 @@ class Player extends React.Component {
             infoTrack: infoArray,
             track: tracks,
         })
+        this.handleTrack();
     };
 
     handlePlay = () => {
@@ -82,6 +84,15 @@ class Player extends React.Component {
             playing: "PLAYING",
             playerText: "Now playing...",
         })
+        this.handlePlays();
+    }
+
+    handleTrack () {
+        this.props.onChangeTrack(this.state.track[1]);
+    }
+
+    handlePlays () {
+        this.props.onChangePlay(this.state.playing[1]);
     }
 
     handlePause = () => {
@@ -95,6 +106,7 @@ class Player extends React.Component {
         const {thumbs, infoTrack} = this.state;
 
         return (
+            <div className="naviApp">
             <div className="player">
                 <div onClick={this.handlePrevTrack} className="prevTrack">
                     <img src={thumbs[0]} className="thumbnail"/>
@@ -107,16 +119,13 @@ class Player extends React.Component {
                     <div className="controlPanel">
                         <i onClick={this.handlePlay} className="far fa-play-circle"/>
                         <i onClick={this.handlePause} className="far fa-pause-circle"/>
-                        <Sound
-                            url={this.state.track[1]}
-                            playStatus={this.state.playing}
-                        />
                     </div>
                 </div>
                 <div onClick={this.handleNextTrack} className="nextTrack">
                     <img src={thumbs[2]} className="thumbnail"/>
                 </div>
 
+            </div>
             </div>
         );
     }
