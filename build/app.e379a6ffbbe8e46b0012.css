@@ -1,0 +1,247 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; }
+
+.flexGlobal {
+  perspective: 1470px;
+  position: relative;
+  top: -100px;
+  width: 1470px;
+  height: 800px;
+  background: url(images/background.c1f2ae61154317df903c5e4c701c947c.jpg) no-repeat;
+  background-size: cover;
+  background-position-y: 40%; }
+
+.naviInterface {
+  transform: rotateX(2deg);
+  position: absolute;
+  top: 207px;
+  left: 335px;
+  width: 800px;
+  height: 430px;
+  color: white;
+  background-color: black; }
+
+.naviBar {
+  font-size: 20px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px; }
+  .naviBar div {
+    margin-right: 10px; }
+  .naviBar span {
+    font-size: 16px; }
+    .naviBar span i {
+      padding: 3px; }
+
+.naviApp {
+  height: 350px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.naviMenu {
+  height: 50px;
+  width: 100%; }
+  .naviMenu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    background-color: gray; }
+    .naviMenu ul a {
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: calc(650px / 4);
+      height: 50px;
+      text-decoration: none;
+      color: white;
+      margin-right: 1px;
+      margin-left: 1px; }
+
+.currentWeather {
+  font-size: 30px; }
+
+.climaControl {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+
+.slider {
+  width: 200px;
+  top: 100px;
+  transform: rotate(-90deg); }
+  .slider:after {
+    content: "COLD";
+    color: royalblue;
+    font-weight: 700;
+    font-size: 17px;
+    position: absolute;
+    top: 84px;
+    left: -37px;
+    transform: rotate(90deg); }
+  .slider:before {
+    content: "HOT";
+    color: crimson;
+    font-weight: 700;
+    font-size: 17px;
+    position: absolute;
+    bottom: 82px;
+    right: -30px;
+    transform: rotate(90deg); }
+
+.leftSlider {
+  position: absolute;
+  bottom: 100px;
+  left: -50px; }
+
+.rightSlider {
+  position: absolute;
+  bottom: 100px;
+  right: -50px; }
+
+.temperatureControl {
+  position: relative;
+  font-size: 26px; }
+  .temperatureControl .tempLeft {
+    position: absolute;
+    left: -290px;
+    top: 115px; }
+  .temperatureControl .tempRight {
+    position: absolute;
+    right: -290px;
+    top: 115px; }
+
+.seatControl {
+  color: grey;
+  font-size: 40px;
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center; }
+  .seatControl .leftSeatControl {
+    position: relative;
+    background-image: url(images/seats.b9534a8b70d90e9fb327c0a68b217de6.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 180px; }
+    .seatControl .leftSeatControl .climaHead {
+      position: absolute;
+      left: 85px; }
+    .seatControl .leftSeatControl .climaHand {
+      position: absolute;
+      left: 110px;
+      top: 40px;
+      transform: rotate(-10deg); }
+    .seatControl .leftSeatControl .climaLegs {
+      position: absolute;
+      left: 135px;
+      top: 75px;
+      transform: rotate(-20deg); }
+  .seatControl .rightSeatControl {
+    position: relative;
+    background-image: url(images/seats.b9534a8b70d90e9fb327c0a68b217de6.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 180px;
+    transform: rotateY(180deg); }
+    .seatControl .rightSeatControl .climaHead {
+      position: absolute;
+      left: 85px; }
+    .seatControl .rightSeatControl .climaHand {
+      position: absolute;
+      left: 110px;
+      top: 40px;
+      transform: rotate(-10deg); }
+    .seatControl .rightSeatControl .climaLegs {
+      position: absolute;
+      left: 135px;
+      top: 75px;
+      transform: rotate(-20deg); }
+
+.player {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100%; }
+  .player .header {
+    padding: 5px; }
+  .player .thumbnail img {
+    width: 150px;
+    height: 150px;
+    border: 3px solid gold;
+    border-radius: 10px; }
+  .player .infoTrack {
+    padding: 10px; }
+  .player .prevTrack img, .player .nextTrack img {
+    width: 120px;
+    height: 120px;
+    border: 1px solid goldenrod;
+    border-radius: 10px; }
+  .player .currentTrack {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+  .player .controlPanel {
+    font-size: 40px;
+    margin-left: 5px; }
+    .player .controlPanel i {
+      margin-left: 5px;
+      margin-right: 5px; }
+
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%; }
+  .settings .settingsSound {
+    background-image: url(images/sounda.0c7c5febe9e8c049c5eb9977e949a9b5.png);
+    background-size: cover;
+    width: 120px;
+    height: 120px; }
+  .settings .settingsDisplay {
+    background-image: url(images/display.b6eb0c7c108a9d3470c64ec307f50678.png);
+    background-size: cover;
+    width: 150px;
+    height: 150px; }
+
+.settingsContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 100%; }
+  .settingsContainer span {
+    font-size: 25px; }
+  .settingsContainer .backward {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-image: url(images/back.a786620795312234d6e7c2d7170d2e1f.png);
+    background-size: cover;
+    width: 40px;
+    height: 40px; }
+
+.activeVent {
+  color: white; }
+
