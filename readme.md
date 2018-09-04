@@ -1,6 +1,6 @@
 # Car Navigation React App
 
-## There is small bug caused by gh-pages, to get past the error, first change to maps or clima control.
+### There is small bug caused by gh-pages, to get past the error, first change to maps or clima control.
 
 ### How to install:
 1. `git clone https://github.com/mostrozny/car-navi.git`
