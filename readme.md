@@ -6,4 +6,4 @@
 3. `npm i`
 
 ### Demo:
- [Click here!](https://mostrozny.github.io/car-navi/ "Car Navigation")
+ [Click here!](https://mostrozny.github.io/car-navi/build/ "Car Navigation")
